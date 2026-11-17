@@ -1,0 +1,6 @@
+[
+    {"name": "friendsofphp/php-cs-fixer", "version": "v3.95.27"},
+    {"name": "phpstan/phpstan", "version": "2.3.4"},
+    {"name": "rector/rector", "version": "2.8.3"},
+    {"name": "pestphp/pest", "version": "v1.23.1"}
+]

@@ -1,0 +1,6 @@
+{
+    "name": "acme/legacy",
+    "require": {
+        "php": ">=5.6"
+    }
+}

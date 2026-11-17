@@ -1,0 +1,65 @@
+{
+    "name": "aluisio/php-quality-pack",
+    "description": "Adaptive code quality toolkit for PHP: Pint, Rector, PHPStan and Pest behind one CLI, with an MCP server and agent skills.",
+    "keywords": ["php", "quality", "static-analysis", "phpstan", "rector", "pint", "pest", "mcp", "ai"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aluisio Pires",
+            "email": "aluisiopireseng@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "phpstan/phpstan": "^1.12 || ^2.0",
+        "rector/rector": "^1.2 || ^2.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "pestphp/pest": "^1.23 || ^2.0 || ^3.0 || ^4.0 || ^5.0"
+    },
+    "suggest": {
+        "laravel/pint": "Code style fixer used on PHP 8.0+.",
+        "friendsofphp/php-cs-fixer": "Code style fixer used on PHP 7.4.",
+        "pestphp/pest": "Test runner.",
+        "pestphp/pest-plugin-type-coverage": "Type coverage reports on PHP 8.1+.",
+        "larastan/larastan": "PHPStan extension for Laravel.",
+        "phpstan/phpstan-symfony": "PHPStan extension for Symfony.",
+        "driftingly/rector-laravel": "Rector rules for Laravel."
+    },
+    "autoload": {
+        "psr-4": {
+            "Aluisio\\PhpQualityPack\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/pqp"
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "lint": "@php bin/pqp lint",
+        "refactor": "@php bin/pqp refactor",
+        "test:lint": [
+            "@php bin/pqp lint --test",
+            "@php bin/pqp refactor --dry-run"
+        ],
+        "test:types": "@php bin/pqp analyse",
+        "test:unit": "@php bin/pqp test",
+        "test": "@php bin/pqp check"
+    }
+}

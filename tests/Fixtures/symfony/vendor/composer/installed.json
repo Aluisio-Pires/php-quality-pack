@@ -1,0 +1,7 @@
+{
+    "packages": [
+        {"name": "symfony/framework-bundle", "version": "v7.3.0"},
+        {"name": "phpstan/phpstan", "version": "1.12.34"},
+        {"name": "rector/rector", "version": "1.2.10"}
+    ]
+}

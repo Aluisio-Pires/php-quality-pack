@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Aluisio\PhpQualityPack\Application;
+
+$autoloaders = [
+    $GLOBALS['_composer_autoload_path'] ?? null,
+    __DIR__.'/../../../autoload.php',
+    __DIR__.'/../vendor/autoload.php',
+];
+
+foreach ($autoloaders as $autoloader) {
+    if (is_string($autoloader) && is_file($autoloader)) {
+        require $autoloader;
+
+        break;
+    }
+}
+
+if (! class_exists(Application::class)) {
+    fwrite(STDERR, "Unable to find the Composer autoloader. Run `composer install`.\n");
+
+    exit(1);
+}
+
+$directory = getcwd();
+
+$arguments = array_values(array_filter(is_array($_SERVER['argv'] ?? null) ? $_SERVER['argv'] : [], 'is_string'));
+
+exit((new Application($directory === false ? __DIR__ : $directory))->run($arguments));

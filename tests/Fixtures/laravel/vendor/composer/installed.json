@@ -1,0 +1,12 @@
+{
+    "packages": [
+        {"name": "laravel/framework", "version": "v12.4.1"},
+        {"name": "larastan/larastan", "version": "v3.4.0"},
+        {"name": "laravel/pint", "version": "v1.32.1"},
+        {"name": "phpstan/phpstan", "version": "2.3.4"},
+        {"name": "rector/rector", "version": "2.8.3"},
+        {"name": "driftingly/rector-laravel", "version": "2.7.3"},
+        {"name": "pestphp/pest", "version": "v4.7.8"},
+        {"name": "pestphp/pest-plugin-type-coverage", "version": "v4.0.4"}
+    ]
+}
